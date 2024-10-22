@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Workout
+
+  Created by Viet Phan on 21/10/24.
+  
+*/
+
+"common.no.network" = "No network connection. Please check your device and try again.";
+"common.done" = "Done";
+"common.error" = "Error";
+"common.apply" = "Apply";
+"common.completed" = "Completed";
+"common.in.progress" = "In-Progress";
+"common.missed" = "Missed";
+"common.exercises" = "exercises";

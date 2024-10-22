@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  Workout
+//
+//  Created by Viet Phan on 21/10/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+APP_NAME = Workout
+BASE_URL = demo6732818.mockable.io
