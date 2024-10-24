@@ -31,7 +31,6 @@
 		1BA2B60B2CC6024100F86E6A /* WorkoutScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B60A2CC6024100F86E6A /* WorkoutScheduleResponse.swift */; };
 		1BA2B60D2CC6025D00F86E6A /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B60C2CC6025D00F86E6A /* WorkoutData.swift */; };
 		1BA2B60F2CC602A500F86E6A /* WorkoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B60E2CC602A500F86E6A /* WorkoutRepository.swift */; };
-		1BA2B6112CC6036900F86E6A /* WorkoutUsercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B6102CC6036900F86E6A /* WorkoutUsercase.swift */; };
 		1BA2B6132CC6038D00F86E6A /* WorkoutRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B6122CC6038D00F86E6A /* WorkoutRepositoryImpl.swift */; };
 		1BA2B6152CC603A800F86E6A /* WorkoutUsercaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B6142CC603A800F86E6A /* WorkoutUsercaseImpl.swift */; };
 		1BA2B6172CC6047500F86E6A /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA2B6162CC6047500F86E6A /* DependencyInjection.swift */; };
@@ -61,6 +60,20 @@
 		1BAD07AA2CC6988700A416BA /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD07A82CC6988700A416BA /* Localization.strings */; };
 		1BAD07AC2CC699DE00A416BA /* String+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07AB2CC699DE00A416BA /* String+Localize.swift */; };
 		1BAD07AF2CC6AC9500A416BA /* LocalizationPlural.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD07AD2CC6AC9500A416BA /* LocalizationPlural.stringsdict */; };
+		1BAD07F72CC8B46300A416BA /* WeekTrainingDataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07F32CC8B46300A416BA /* WeekTrainingDataLocal.swift */; };
+		1BAD07F82CC8B46300A416BA /* DayOfWeekTrainingDataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07F42CC8B46300A416BA /* DayOfWeekTrainingDataLocal.swift */; };
+		1BAD07F92CC8B46300A416BA /* AssignmentLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07F52CC8B46300A416BA /* AssignmentLocal.swift */; };
+		1BAD07FA2CC8B46300A416BA /* WorkoutDataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07F62CC8B46300A416BA /* WorkoutDataLocal.swift */; };
+		1BAD08002CC8B47D00A416BA /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07FC2CC8B47D00A416BA /* NullStore.swift */; };
+		1BAD08012CC8B47D00A416BA /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07FD2CC8B47D00A416BA /* CoreDataStore.swift */; };
+		1BAD08022CC8B47D00A416BA /* CoreDataStoreImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07FE2CC8B47D00A416BA /* CoreDataStoreImpl.swift */; };
+		1BAD08032CC8B47D00A416BA /* CoreDataDelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD07FF2CC8B47D00A416BA /* CoreDataDelpers.swift */; };
+		1BAD08052CC8B4A500A416BA /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD08042CC8B4A500A416BA /* LocalDatabase.swift */; };
+		1BAD08092CC8B69800A416BA /* WorkoutUsercase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD08082CC8B69800A416BA /* WorkoutUsercase.swift */; };
+		1BAD080C2CC8B6AE00A416BA /* Workout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD080A2CC8B6AE00A416BA /* Workout.xcdatamodeld */; };
+		1BAD080E2CC8B6E800A416BA /* LocalDatabaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD080D2CC8B6E800A416BA /* LocalDatabaseImpl.swift */; };
+		1BAD08112CC8B7E000A416BA /* WeekTrainingWorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD08102CC8B7E000A416BA /* WeekTrainingWorkoutStore.swift */; };
+		1BAD08132CC8B84B00A416BA /* CoreDataStore+WeekTrainingWorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD08122CC8B84B00A416BA /* CoreDataStore+WeekTrainingWorkoutStore.swift */; };
 		34B83EDA725269B6A2BC58AB /* Pods_WorkoutTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E6573A31EBDAC4D6D16B06 /* Pods_WorkoutTests.framework */; };
 		67588FC40508D1EAC3D061B6 /* Pods_Workout_WorkoutUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1244BB9246CBE4E479B27BA /* Pods_Workout_WorkoutUITests.framework */; };
 		8129FC66826049FD5F9184A0 /* Pods_Workout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E2B8DDA73B66CD97A06B7D /* Pods_Workout.framework */; };
@@ -114,7 +127,6 @@
 		1BA2B60A2CC6024100F86E6A /* WorkoutScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutScheduleResponse.swift; sourceTree = "<group>"; };
 		1BA2B60C2CC6025D00F86E6A /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
 		1BA2B60E2CC602A500F86E6A /* WorkoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRepository.swift; sourceTree = "<group>"; };
-		1BA2B6102CC6036900F86E6A /* WorkoutUsercase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutUsercase.swift; sourceTree = "<group>"; };
 		1BA2B6122CC6038D00F86E6A /* WorkoutRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRepositoryImpl.swift; sourceTree = "<group>"; };
 		1BA2B6142CC603A800F86E6A /* WorkoutUsercaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutUsercaseImpl.swift; sourceTree = "<group>"; };
 		1BA2B6162CC6047500F86E6A /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
@@ -144,6 +156,20 @@
 		1BAD07A92CC6988700A416BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		1BAD07AB2CC699DE00A416BA /* String+Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localize.swift"; sourceTree = "<group>"; };
 		1BAD07AE2CC6AC9500A416BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/LocalizationPlural.stringsdict; sourceTree = "<group>"; };
+		1BAD07F32CC8B46300A416BA /* WeekTrainingDataLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekTrainingDataLocal.swift; sourceTree = "<group>"; };
+		1BAD07F42CC8B46300A416BA /* DayOfWeekTrainingDataLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOfWeekTrainingDataLocal.swift; sourceTree = "<group>"; };
+		1BAD07F52CC8B46300A416BA /* AssignmentLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentLocal.swift; sourceTree = "<group>"; };
+		1BAD07F62CC8B46300A416BA /* WorkoutDataLocal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDataLocal.swift; sourceTree = "<group>"; };
+		1BAD07FC2CC8B47D00A416BA /* NullStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
+		1BAD07FD2CC8B47D00A416BA /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		1BAD07FE2CC8B47D00A416BA /* CoreDataStoreImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStoreImpl.swift; sourceTree = "<group>"; };
+		1BAD07FF2CC8B47D00A416BA /* CoreDataDelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDelpers.swift; sourceTree = "<group>"; };
+		1BAD08042CC8B4A500A416BA /* LocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabase.swift; sourceTree = "<group>"; };
+		1BAD08082CC8B69800A416BA /* WorkoutUsercase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutUsercase.swift; sourceTree = "<group>"; };
+		1BAD080B2CC8B6AE00A416BA /* Workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Workout.xcdatamodel; sourceTree = "<group>"; };
+		1BAD080D2CC8B6E800A416BA /* LocalDatabaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseImpl.swift; sourceTree = "<group>"; };
+		1BAD08102CC8B7E000A416BA /* WeekTrainingWorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekTrainingWorkoutStore.swift; sourceTree = "<group>"; };
+		1BAD08122CC8B84B00A416BA /* CoreDataStore+WeekTrainingWorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStore+WeekTrainingWorkoutStore.swift"; sourceTree = "<group>"; };
 		273DBAD0D1AAA7314065A40D /* Pods-WorkoutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutTests.release.xcconfig"; path = "Target Support Files/Pods-WorkoutTests/Pods-WorkoutTests.release.xcconfig"; sourceTree = "<group>"; };
 		8426D42885225AFE12164D30 /* Pods-Workout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout.release.xcconfig"; path = "Target Support Files/Pods-Workout/Pods-Workout.release.xcconfig"; sourceTree = "<group>"; };
 		85E6573A31EBDAC4D6D16B06 /* Pods_WorkoutTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,7 +404,9 @@
 		1BA2B5E72CC5F92600F86E6A /* LocalDatas */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD07EE2CC8B41200A416BA /* CoreData */,
 				1BAD07A02CC68F5F00A416BA /* LocalFileDataImpl.swift */,
+				1BAD080D2CC8B6E800A416BA /* LocalDatabaseImpl.swift */,
 			);
 			path = LocalDatas;
 			sourceTree = "<group>";
@@ -416,7 +444,7 @@
 		1BA2B5EB2CC5F95C00F86E6A /* UserCases */ = {
 			isa = PBXGroup;
 			children = (
-				1BA2B6102CC6036900F86E6A /* WorkoutUsercase.swift */,
+				1BAD08082CC8B69800A416BA /* WorkoutUsercase.swift */,
 			);
 			path = UserCases;
 			sourceTree = "<group>";
@@ -512,6 +540,7 @@
 		1BAD07A22CC6937200A416BA /* LocalFileData */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD08042CC8B4A500A416BA /* LocalDatabase.swift */,
 				1BAD07A32CC693A300A416BA /* LocalFileData.swift */,
 			);
 			path = LocalFileData;
@@ -524,6 +553,48 @@
 				1BAD07AD2CC6AC9500A416BA /* LocalizationPlural.stringsdict */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		1BAD07EE2CC8B41200A416BA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD080A2CC8B6AE00A416BA /* Workout.xcdatamodeld */,
+				1BAD07FB2CC8B46E00A416BA /* Infra */,
+				1BAD080F2CC8B79300A416BA /* WeekTrainingWorkout */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1BAD07F22CC8B45300A416BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD07F52CC8B46300A416BA /* AssignmentLocal.swift */,
+				1BAD07F42CC8B46300A416BA /* DayOfWeekTrainingDataLocal.swift */,
+				1BAD07F32CC8B46300A416BA /* WeekTrainingDataLocal.swift */,
+				1BAD07F62CC8B46300A416BA /* WorkoutDataLocal.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BAD07FB2CC8B46E00A416BA /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD07FF2CC8B47D00A416BA /* CoreDataDelpers.swift */,
+				1BAD07FD2CC8B47D00A416BA /* CoreDataStore.swift */,
+				1BAD07FE2CC8B47D00A416BA /* CoreDataStoreImpl.swift */,
+				1BAD07FC2CC8B47D00A416BA /* NullStore.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		1BAD080F2CC8B79300A416BA /* WeekTrainingWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD07F22CC8B45300A416BA /* Model */,
+				1BAD08102CC8B7E000A416BA /* WeekTrainingWorkoutStore.swift */,
+				1BAD08122CC8B84B00A416BA /* CoreDataStore+WeekTrainingWorkoutStore.swift */,
+			);
+			path = WeekTrainingWorkout;
 			sourceTree = "<group>";
 		};
 		87FCEFD6C820E122CD77BDB3 /* Frameworks */ = {
@@ -791,15 +862,19 @@
 				1BAD07A42CC693A300A416BA /* LocalFileData.swift in Sources */,
 				1BAD07962CC66ECC00A416BA /* UIViewController+Alert.swift in Sources */,
 				1BAD07A62CC6984300A416BA /* StringLoader.swift in Sources */,
+				1BAD08022CC8B47D00A416BA /* CoreDataStoreImpl.swift in Sources */,
 				1BAD07822CC61B8000A416BA /* WorkoutView.swift in Sources */,
-				1BA2B6112CC6036900F86E6A /* WorkoutUsercase.swift in Sources */,
 				1BA2B6132CC6038D00F86E6A /* WorkoutRepositoryImpl.swift in Sources */,
+				1BAD08032CC8B47D00A416BA /* CoreDataDelpers.swift in Sources */,
+				1BAD08012CC8B47D00A416BA /* CoreDataStore.swift in Sources */,
 				1BA2B5F52CC5FA3C00F86E6A /* MainCoordinator.swift in Sources */,
+				1BAD08002CC8B47D00A416BA /* NullStore.swift in Sources */,
 				1BA2B5FF2CC6008800F86E6A /* APIConfig.swift in Sources */,
 				1BAD07A12CC68F5F00A416BA /* LocalFileDataImpl.swift in Sources */,
 				1BAD07902CC629AB00A416BA /* DayOfWeekTrainingData.swift in Sources */,
 				1BAD07922CC64C9700A416BA /* AppColor.swift in Sources */,
 				1BAD077E2CC610B800A416BA /* TrainingCell.swift in Sources */,
+				1BAD08092CC8B69800A416BA /* WorkoutUsercase.swift in Sources */,
 				1BA2B5F72CC5FA7600F86E6A /* TrainingViewModel.swift in Sources */,
 				1BA2B5E32CC5F8C200F86E6A /* BaseViewController.swift in Sources */,
 				1BA2B5DA2CC5F7EC00F86E6A /* DecodeUtils.swift in Sources */,
@@ -808,16 +883,25 @@
 				1BA2B5F32CC5FA0200F86E6A /* BindableType.swift in Sources */,
 				1BA2B5DD2CC5F83B00F86E6A /* String+Extention.swift in Sources */,
 				1BA2B6032CC600DF00F86E6A /* APIService.swift in Sources */,
+				1BAD08112CC8B7E000A416BA /* WeekTrainingWorkoutStore.swift in Sources */,
+				1BAD07F92CC8B46300A416BA /* AssignmentLocal.swift in Sources */,
+				1BAD07FA2CC8B46300A416BA /* WorkoutDataLocal.swift in Sources */,
+				1BAD08052CC8B4A500A416BA /* LocalDatabase.swift in Sources */,
 				1BA2B5D72CC5F7CE00F86E6A /* Strings.swift in Sources */,
 				1BA2B5A12CC5F5AE00F86E6A /* AppDelegate.swift in Sources */,
+				1BAD080E2CC8B6E800A416BA /* LocalDatabaseImpl.swift in Sources */,
 				1BAD07AC2CC699DE00A416BA /* String+Localize.swift in Sources */,
+				1BAD07F72CC8B46300A416BA /* WeekTrainingDataLocal.swift in Sources */,
 				1BAD07772CC60FDC00A416BA /* ReusableView.swift in Sources */,
+				1BAD07F82CC8B46300A416BA /* DayOfWeekTrainingDataLocal.swift in Sources */,
 				1BA2B60F2CC602A500F86E6A /* WorkoutRepository.swift in Sources */,
 				1BA2B6152CC603A800F86E6A /* WorkoutUsercaseImpl.swift in Sources */,
 				1BA2B60D2CC6025D00F86E6A /* WorkoutData.swift in Sources */,
+				1BAD080C2CC8B6AE00A416BA /* Workout.xcdatamodeld in Sources */,
 				1BA2B5FD2CC6006F00F86E6A /* APIEndpoint.swift in Sources */,
 				1BAD07942CC65E6100A416BA /* AppFont.swift in Sources */,
 				1BA2B6052CC6010100F86E6A /* APIError.swift in Sources */,
+				1BAD08132CC8B84B00A416BA /* CoreDataStore+WeekTrainingWorkoutStore.swift in Sources */,
 				1BA2B60B2CC6024100F86E6A /* WorkoutScheduleResponse.swift in Sources */,
 				1BA2B6192CC604E500F86E6A /* GlobalFunction.swift in Sources */,
 				1BAD07862CC61E4900A416BA /* UIView+Extention.swift in Sources */,
@@ -1183,6 +1267,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1BAD080A2CC8B6AE00A416BA /* Workout.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1BAD080B2CC8B6AE00A416BA /* Workout.xcdatamodel */,
+			);
+			currentVersion = 1BAD080B2CC8B6AE00A416BA /* Workout.xcdatamodel */;
+			name = Workout.xcdatamodeld;
+			path = /Users/vietphan/Desktop/Workout/Workout/Data/LocalDatas/CoreData/Workout.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1BA2B5952CC5F5AE00F86E6A /* Project object */;
 }

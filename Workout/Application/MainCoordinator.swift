@@ -17,7 +17,8 @@ class MainCoordinator {
     
     func showHome() {
         let trainingVC = TrainingViewController()
-        trainingVC.bind(to: TrainingViewModel(workoutUsercase: resolve(WorkoutUsercase.self)))
+        trainingVC.bind(to: TrainingViewModel(workoutUsercase: resolve(WorkoutUsercase.self), 
+                                              localDatabase: resolve(LocalDatabase.self)))
         let roootNavigation = UINavigationController(rootViewController: trainingVC)
         roootNavigation.isNavigationBarHidden = true
         window.makeKeyAndVisible()

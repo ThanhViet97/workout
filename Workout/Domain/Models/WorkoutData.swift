@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum WorkoutStatus: Int {
-    case assign = 0, inProgress, complete
+enum WorkoutStatus: Int, Codable {
+    case assigned = 0, inProgress, completed
 }
 
 struct WorkoutData: Codable {
@@ -31,14 +31,13 @@ struct WorkoutData: Codable {
 
 struct Assignment: Codable {
     let id: String
-    let status: Int
+    var status: WorkoutStatus
     let client: String
     let title: String
     let day: String
     let date: String
     let exercisesCompleted: Int
     let exercisesCount: Int
-    var isWorkouted: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -49,18 +48,14 @@ struct Assignment: Codable {
         case date
         case exercisesCompleted = "exercises_completed"
         case exercisesCount = "exercises_count"
-        case isWorkouted
     }
         
     mutating func workoutToggle() {
-        isWorkouted = !(isWorkouted ?? false)
+        let currentStatus = status
+        status = currentStatus == .completed ? .assigned : .completed
     }
     
-    mutating func updateIsWorkouted(newValue: Bool?) {
-        isWorkouted = newValue
-    }
-    
-    func getWorkoutStatus() -> WorkoutStatus {
-        return WorkoutStatus(rawValue: status) ?? .assign
+    mutating func updateStatus(newValue: WorkoutStatus) {
+        status = newValue
     }
 }

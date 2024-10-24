@@ -69,7 +69,7 @@ extension WorkoutView {
         setupFont()
         guard let assignment else { return }
         workoutNameLabel.text = assignment.title
-        configureWorkoutStatus(isWorkouted: assignment.isWorkouted ?? false)
+        configureWorkoutStatus(isWorkouted: assignment.status == .completed)
         statusLabel.attributedText = getStatusAttributedText(for: assignment)
     }
     
@@ -93,12 +93,12 @@ extension WorkoutView {
     }
     
     private func getStatusAttributedText(for assignment: Assignment) -> NSAttributedString {
-        switch assignment.getWorkoutStatus() {
+        switch assignment.status {
         case .inProgress:
             return NSAttributedString(string: Strings.Workout.inProgress)
-        case .complete:
+        case .completed:
             return NSAttributedString(string: Strings.Workout.completed)
-        case .assign:
+        case .assigned:
             return getAttributedAssignText(for: assignment)
         }
     }

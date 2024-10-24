@@ -36,9 +36,11 @@ class TrainingViewModel: TrainingViewModelType {
     private var state = CurrentValueSubject<TrainingViewModelState, Never>(.initial)
     private var cancellables = Set<AnyCancellable>()
     private let workoutUsercase: WorkoutUsercase
+    private let localDatabase: LocalDatabase
     
-    init(workoutUsercase: WorkoutUsercase) {
+    init(workoutUsercase: WorkoutUsercase, localDatabase: LocalDatabase) {
         self.workoutUsercase = workoutUsercase
+        self.localDatabase = localDatabase
         handleMapDayToTrainingData()
         listenNetwork()
     }
@@ -51,7 +53,7 @@ class TrainingViewModel: TrainingViewModelType {
             })
             .sink(receiveCompletion: { [weak self] completion in
                 if case .failure(let error) = completion {
-                    self?.weekTrainingData = self?.workoutUsercase.getLocalDayOfWeekTrainingDatas() ?? []
+                    self?.weekTrainingData = self?.localDatabase.store.getWeekTrainingWorkout().first?.dayOfWeekTrainingData ?? []
                     self?.state.send(.failed(error.localizedDescription))
                 }
             }, receiveValue: { [weak self] listTrainingData in
@@ -71,7 +73,10 @@ class TrainingViewModel: TrainingViewModelType {
         }
         
         weekTrainingData[index].trainingData?.assignments[assignmentIndex].workoutToggle()
-        workoutUsercase.saveDayOfWeekTrainingDatas(weekTrainingData)
+//        if let assignments = weekTrainingData[index].trainingData?.assignments[assignmentIndex] {
+//            localDatabase.store.updateAssignmentStatus(assignmentId: assignments.id, status: assignments.status.rawValue)
+//        }
+        localDatabase.store.saveWeekTrainingWorkout(with: WeekTrainingData(dayOfWeekTrainingData: weekTrainingData))
         state.send(.didChangeDataSuccess)
     }
     
@@ -91,6 +96,8 @@ class TrainingViewModel: TrainingViewModelType {
         }
         handleMapStatusWorkoutedToData()
         workoutUsercase.saveDayOfWeekTrainingDatas(weekTrainingData)
+        let weekTrainingData = WeekTrainingData(dayOfWeekTrainingData: weekTrainingData)
+        localDatabase.store.saveWeekTrainingWorkout(with: weekTrainingData)
     }
     
     private func listenNetwork() {
@@ -113,8 +120,9 @@ class TrainingViewModel: TrainingViewModelType {
 
 extension TrainingViewModel {
     private func handleMapStatusWorkoutedToData() {
-        let localData = workoutUsercase.getLocalDayOfWeekTrainingDatas() ?? []
-        
+//        let localData = workoutUsercase.getLocalDayOfWeekTrainingDatas() ?? []
+        let localData = localDatabase.store.getWeekTrainingWorkout().first?.dayOfWeekTrainingData ?? []
+        print("LOGG====> \(localData)")
         for dayData in localData {
             guard let assignmentsLocal = dayData.trainingData?.assignments,
                   let dayDataIndex = weekTrainingData.firstIndex(where: { $0.date == dayData.date }) else { continue }
@@ -125,11 +133,17 @@ extension TrainingViewModel {
     private func updateAssignmentsStatus(localAssignments: [Assignment], dayDataIndex: Int) {
         for assignmentLocal in localAssignments {
             guard let assignmentIndex = findAssignmentIndex(for: assignmentLocal.id, in: dayDataIndex) else { continue }
-            weekTrainingData[dayDataIndex].trainingData?.assignments[assignmentIndex].updateIsWorkouted(newValue: assignmentLocal.isWorkouted)
+            weekTrainingData[dayDataIndex]
+            .trainingData?
+            .assignments[assignmentIndex]
+            .updateStatus(newValue: assignmentLocal.status)       
         }
     }
     
     private func findAssignmentIndex(for id: String, in dayDataIndex: Int) -> Int? {
-        return weekTrainingData[dayDataIndex].trainingData?.assignments.firstIndex { $0.id == id }
+        return weekTrainingData[dayDataIndex]
+            .trainingData?
+            .assignments
+            .firstIndex { $0.id == id }
     }
 }

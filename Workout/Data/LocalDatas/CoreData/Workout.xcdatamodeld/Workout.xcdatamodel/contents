@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AssignmentLocal" representedClassName="AssignmentLocal" syncable="YES">
+        <attribute name="client" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="exercisesCompleted" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="exercisesCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isWorkouted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="workoutData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutDataLocal" inverseName="assignments" inverseEntity="WorkoutDataLocal"/>
+    </entity>
+    <entity name="DayOfWeekTrainingDataLocal" representedClassName="DayOfWeekTrainingDataLocal" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <relationship name="dayOfWeekTrainingData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WeekTrainingDataLocal" inverseName="dayOfWeekTrainingData" inverseEntity="WeekTrainingDataLocal"/>
+        <relationship name="trainingData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutDataLocal" inverseName="trainingData" inverseEntity="WorkoutDataLocal"/>
+    </entity>
+    <entity name="WeekTrainingDataLocal" representedClassName="WeekTrainingDataLocal" syncable="YES">
+        <relationship name="dayOfWeekTrainingData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DayOfWeekTrainingDataLocal" inverseName="dayOfWeekTrainingData" inverseEntity="DayOfWeekTrainingDataLocal"/>
+    </entity>
+    <entity name="WorkoutDataLocal" representedClassName="WorkoutDataLocal" syncable="YES">
+        <attribute name="client" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="trainer" optional="YES" attributeType="String"/>
+        <relationship name="assignments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AssignmentLocal" inverseName="workoutData" inverseEntity="AssignmentLocal"/>
+        <relationship name="trainingData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayOfWeekTrainingDataLocal" inverseName="trainingData" inverseEntity="DayOfWeekTrainingDataLocal"/>
+    </entity>
+</model>

@@ -45,10 +45,3 @@ struct DayOfWeekTrainingData: Codable {
         return date > Date.today
     }
 }
-
-//extension DayOfWeekTrainingData {
-//    init(from localData: DayOfWeekTrainingLocalData) {
-//        self.date = localData.date
-//        self.trainingData = localData.trainingData.map({ WorkoutData(from: $0) })
-//    }
-//}

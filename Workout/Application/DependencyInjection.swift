@@ -24,6 +24,11 @@ class DI {
             return APIService()
         }
         .inObjectScope(.container)
+        
+        container.register(LocalDatabase.self) { _ in
+            return LocalDatabaseImpl()
+        }
+        .inObjectScope(.container)
     }
     
     func registerRepositories() {
@@ -34,7 +39,7 @@ class DI {
     }
     
     func registerLocalFileData() {
-        container.register(LocalFileData.self) { resolver in
+        container.register(LocalFileData.self) { _ in
             return LocalFileDataImpl()
         }
     }
